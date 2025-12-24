@@ -122,7 +122,14 @@ const Contact = () => {
         {/* Title */}
         <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Get in Touch</span>
+            <span 
+              className="text-primary"
+              style={{
+                textShadow: '0 0 6px rgba(124,58,237,0.6), 0 0 16px rgba(124,58,237,0.35)'
+              }}
+            >
+              Get in Touch
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Have a project in mind or just want to say hello? I'd love to hear from you!

@@ -6,12 +6,12 @@ import profileImage from '@/assets/profile.png';
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
-  { name: 'HTML', icon: '🌐' },
-  { name: 'CSS', icon: '🎨' },
-  { name: 'JavaScript', icon: '⚡' },
-  { name: 'React', icon: '⚛️' },
   { name: 'Python', icon: '🐍' },
-  { name: 'GSAP', icon: '✨' },
+  { name: 'Java', icon: '☕' },
+  { name: 'Analytics', icon: '📊' },
+  { name: 'Machine Learning', icon: '🤖' },
+  { name: 'R', icon: '📈' },
+  { name: 'SQL', icon: '🗃️' },
 ];
 
 const About = () => {

@@ -47,14 +47,6 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <button
-            onClick={() => scrollToSection('#home')}
-            className="text-xl font-bold tracking-tight gradient-text hover:opacity-80 transition-opacity"
-          >
-            FAHADAGRI
-          </button>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -68,6 +60,15 @@ const Navbar = () => {
               </button>
             ))}
           </div>
+
+          {/* Logo - Centered on mobile, right-aligned on desktop */}
+          <button
+            onClick={() => scrollToSection('#home')}
+            className="text-xl font-bold tracking-wide hover:opacity-80 transition-opacity"
+          >
+            <span className="text-secondary">FAHAD</span>
+            <span className="text-primary">AGRI</span>
+          </button>
 
           {/* CTA Button */}
           <Button

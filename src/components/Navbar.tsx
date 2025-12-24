@@ -52,7 +52,7 @@ const Navbar = () => {
             onClick={() => scrollToSection('#home')}
             className="text-xl font-bold tracking-tight gradient-text hover:opacity-80 transition-opacity"
           >
-            MF
+            FAHADAGRI
           </button>
 
           {/* Desktop Navigation */}

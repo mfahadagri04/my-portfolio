@@ -117,7 +117,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 ${index === 0 ? 'scale-110' : ''}`}
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-150 ${index === 0 ? 'scale-[1.4]' : ''}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
               </div>

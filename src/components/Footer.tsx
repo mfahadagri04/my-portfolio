@@ -62,13 +62,14 @@ const Footer = () => {
       <div className="footer-particle absolute bottom-1/4 left-1/3 w-2 h-2 bg-glow-secondary/30 rounded-full blur-sm" style={{ animationDelay: '2s' }} />
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Logo & Made with */}
+        <div className="grid gap-6 items-center md:grid-cols-3">
+          {/* Name */}
           <div className="text-center md:text-left flex-shrink-0">
-            <h3 
+            <h3
               className="text-xl font-bold text-primary"
               style={{
-                textShadow: '0 0 6px rgba(124,58,237,0.6), 0 0 16px rgba(124,58,237,0.35)'
+                textShadow:
+                  '0 0 6px rgba(124,58,237,0.6), 0 0 16px rgba(124,58,237,0.35)',
               }}
             >
               Muhammad Fahad
@@ -79,7 +80,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-6">
+          <nav className="flex flex-wrap justify-center gap-6 md:justify-center">
             {['Home', 'About', 'Projects', 'Contact'].map((link) => (
               <button
                 key={link}
@@ -92,12 +93,13 @@ const Footer = () => {
           </nav>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center gap-4 md:justify-end">
             <a
               href="https://github.com/mfahadagri04"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground hover:glow-text transition-all duration-300"
+              aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -106,19 +108,20 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground hover:glow-text transition-all duration-300"
+              aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="mailto:me@fahadagri.com"
               className="p-2 text-muted-foreground hover:text-foreground hover:glow-text transition-all duration-300"
+              aria-label="Email"
             >
               <Mail className="w-5 h-5" />
             </a>
           </div>
         </div>
 
-        {/* Copyright - inline on same row for larger screens */}
         <div className="mt-6 text-center">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Muhammad Fahad. All rights reserved.

@@ -121,11 +121,12 @@ const Hero = () => {
         />
       </div>
 
-      {/* Full-coverage overlay for readability - no cutoff */}
+      {/* Solid black cap at top to hide seam - NO gradient */}
       <div 
-        className="absolute inset-0 z-[1]"
+        className="absolute top-0 left-0 right-0 z-[1]"
         style={{
-          background: 'radial-gradient(circle at 60% 40%, rgba(0,0,0,0.15), rgba(0,0,0,0.75))'
+          height: '40%',
+          background: '#05060a',
         }}
       />
 

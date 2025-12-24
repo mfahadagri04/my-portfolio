@@ -91,10 +91,17 @@ const Projects = () => {
         {/* Title */}
         <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Featured Projects</span>
+            <span 
+              className="text-primary"
+              style={{
+                textShadow: '0 0 6px rgba(124,58,237,0.6), 0 0 16px rgba(124,58,237,0.35)'
+              }}
+            >
+              Featured Projects
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A selection of my recent work showcasing my skills in web development and data science.
+            A selection of projects showcasing my skills in software development and applied data science and analytics.
           </p>
         </div>
 

@@ -105,17 +105,23 @@ const Hero = () => {
       {/* Background Spline */}
       <div
         ref={splineRef}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 overflow-hidden"
+        style={{
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%)',
+          maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%)',
+        }}
       >
         <iframe
           src="https://my.spline.design/aigreymarketingbanner-gzki67C1KKwarH6YajxUeMzt/?v=2"
           frameBorder="0"
-          className="w-full h-full"
-          style={{ pointerEvents: 'none' }}
+          className="w-full h-full border-0"
+          style={{ 
+            pointerEvents: 'none',
+            display: 'block',
+            margin: 0,
+            padding: 0,
+          }}
         />
-        {/* Overlay gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
       </div>
 
       {/* Floating orbs */}

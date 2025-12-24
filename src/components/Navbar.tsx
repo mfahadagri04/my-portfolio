@@ -58,8 +58,8 @@ const Navbar = () => {
             FAHADAGRI
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -72,6 +72,8 @@ const Navbar = () => {
             ))}
           </div>
 
+          {/* Spacer for balance */}
+          <div className="hidden md:block w-24" />
 
           {/* Mobile Menu Toggle */}
           <button

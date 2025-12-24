@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const skills = [
   { name: 'Python', icon: '🐍' },
   { name: 'Java', icon: '☕' },
-  { name: 'Analytics & Visualization', icon: '📊' },
+  { name: 'Analytics', icon: '📊' },
   { name: 'Machine Learning', icon: '🤖' },
   { name: 'R', icon: '📈' },
   { name: 'SQL', icon: '🗃️' },

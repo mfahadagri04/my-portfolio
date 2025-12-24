@@ -51,7 +51,7 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="relative py-16 overflow-hidden border-t border-border/30"
+      className="relative py-8 overflow-hidden border-t border-border/30"
     >
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-t from-card/50 to-transparent" />
@@ -60,15 +60,14 @@ const Footer = () => {
       <div className="footer-particle absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full blur-sm" />
       <div className="footer-particle absolute top-1/3 right-1/4 w-3 h-3 bg-accent/20 rounded-full blur-sm" style={{ animationDelay: '1s' }} />
       <div className="footer-particle absolute bottom-1/4 left-1/3 w-2 h-2 bg-glow-secondary/30 rounded-full blur-sm" style={{ animationDelay: '2s' }} />
-      <div className="footer-particle absolute top-1/2 right-1/3 w-4 h-4 bg-primary/15 rounded-full blur-md" style={{ animationDelay: '0.5s' }} />
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo & Copyright */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo & Made with */}
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold gradient-text mb-2">Muhammad Fahad</h3>
-            <p className="text-sm text-muted-foreground flex items-center justify-center md:justify-start gap-1">
-              Made with <Heart className="w-4 h-4 text-primary fill-primary" /> in 2024
+            <h3 className="text-xl font-bold gradient-text">Muhammad Fahad</h3>
+            <p className="text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1">
+              Made with <Heart className="w-3 h-3 text-primary fill-primary" /> in 2024
             </p>
           </div>
 
@@ -88,7 +87,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/mfahadagri04"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground hover:glow-text transition-all duration-300"
@@ -96,7 +95,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/mfahadagri/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground hover:glow-text transition-all duration-300"
@@ -104,7 +103,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:me@fahadagri.com"
               className="p-2 text-muted-foreground hover:text-foreground hover:glow-text transition-all duration-300"
             >
               <Mail className="w-5 h-5" />
@@ -112,8 +111,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom line */}
-        <div className="mt-12 pt-8 border-t border-border/20 text-center">
+        {/* Copyright - inline on same row for larger screens */}
+        <div className="mt-6 text-center">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Muhammad Fahad. All rights reserved.
           </p>

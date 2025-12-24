@@ -72,14 +72,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <Button
-            variant="glass"
-            className="hidden md:flex"
-            onClick={() => scrollToSection('#contact')}
-          >
-            Get in Touch
-          </Button>
 
           {/* Mobile Menu Toggle */}
           <button

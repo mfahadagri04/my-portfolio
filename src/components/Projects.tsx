@@ -127,7 +127,7 @@ const Projects = () => {
                 <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:gradient-text transition-all duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-2">
+                <p className="text-muted-foreground mb-4">
                   {project.description}
                 </p>
 

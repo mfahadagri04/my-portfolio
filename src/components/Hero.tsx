@@ -110,7 +110,7 @@ const Hero = () => {
         style={{ pointerEvents: 'none' }}
       >
         <iframe
-          src="https://my.spline.design/aigreymarketingbanner-gzki67C1KKwarH6YajxUeMzt/?v=2"
+          src="https://my.spline.design/aigreymarketingbanner-gzki67C1KKwarH6YajxUeMzt/"
           frameBorder="0"
           className="absolute inset-0 w-full h-full border-0 block"
           style={{ 

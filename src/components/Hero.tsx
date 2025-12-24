@@ -124,8 +124,8 @@ const Hero = () => {
       <div className="glow-orb absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-glow-secondary/20 blur-2xl" style={{ animationDelay: '2s' }} />
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-6 pt-24">
-        <div className="max-w-4xl">
+      <div className="container relative z-10 mx-auto px-6 pt-24 flex items-center justify-center min-h-screen">
+        <div className="max-w-4xl text-center">
           <h1
             ref={headlineRef}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
@@ -142,7 +142,7 @@ const Hero = () => {
             <span className="text-primary animate-pulse">|</span>
           </p>
 
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
+          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               variant="hero"
               size="xl"

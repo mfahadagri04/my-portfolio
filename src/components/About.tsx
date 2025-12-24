@@ -135,17 +135,30 @@ const About = () => {
           {/* Content */}
           <div ref={contentRef}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">About Me</span>
+              <span 
+                className="text-primary"
+                style={{
+                  textShadow: '0 0 6px rgba(124,58,237,0.6), 0 0 16px rgba(124,58,237,0.35)'
+                }}
+              >
+                About Me
+              </span>
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              I'm a passionate developer and student with a deep interest in Data Science and Artificial Intelligence. 
-              I love building beautiful, interactive web experiences that push the boundaries of what's possible on the web.
+              Hi! I'm a fourth-year Business Analytics and Computer Science student at the University of Calgary. I'm really passionate about data and AI, and I enjoy learning how they can be used to solve real problems and support better decision-making.
             </p>
             
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              I like working with data not just to analyze numbers, but to uncover insights and tell meaningful stories. Whether I'm building models, creating visualizations, or exploring new tools, I'm always curious and excited to keep learning.
+            </p>
+
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              Outside of school and projects, you'll usually find me playing soccer or watching Manchester United. I've been a fan for as long as I can remember, and following the team has taught me a lot about resilience, patience, and celebrating the small wins. ⚽
+            </p>
+
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              When I'm not coding, you'll find me watching soccer or exploring the latest trends in AI and machine learning. 
-              I believe in continuous learning and always strive to improve my skills.
+              I'm driven, curious, and always looking for ways to grow both technically and personally. Right now, I'm looking for opportunities where I can learn from others, take on new challenges, and start building a career in data and AI. If you'd like to chat about technology, football, or anything else, feel free to reach out!
             </p>
 
             {/* Skills */}

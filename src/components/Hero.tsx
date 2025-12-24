@@ -144,11 +144,11 @@ const Hero = () => {
       <div className="glow-orb absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-glow-secondary/20 blur-2xl z-[1]" style={{ animationDelay: '2s' }} />
 
       {/* Content */}
-      <div className="container relative z-[2] mx-auto px-6 flex items-center justify-center min-h-screen">
+      <div className="container relative z-[2] mx-auto px-4 sm:px-6 flex items-center justify-center min-h-screen">
         <div className="max-w-4xl text-center">
           <h1
             ref={headlineRef}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-4 md:mb-6 leading-tight"
           >
             <span className="text-foreground">Hi, I'm </span>
             <span 
@@ -163,7 +163,7 @@ const Hero = () => {
 
           <p
             ref={subtitleRef}
-            className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 h-10"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground mb-6 md:mb-8 h-8 md:h-10 leading-relaxed"
           >
             A <span className="text-foreground font-medium">{displayText}</span>
             <span className="text-primary animate-pulse">|</span>
@@ -174,7 +174,7 @@ const Hero = () => {
               variant="hero"
               size="lg"
               onClick={scrollToContact}
-              className="group"
+              className="group text-sm sm:text-base"
             >
               Get in Touch
               <span className="inline-block transition-transform group-hover:translate-x-1">→</span>

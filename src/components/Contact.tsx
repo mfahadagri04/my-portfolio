@@ -132,16 +132,16 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-32 overflow-hidden"
+      className="relative py-16 md:py-24 lg:py-32 overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] bg-primary/5 rounded-full blur-3xl" />
 
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         {/* Title */}
-        <div ref={titleRef} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div ref={titleRef} className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             <span 
               className="text-primary"
               style={{
@@ -151,16 +151,16 @@ const Contact = () => {
               Get in Touch
             </span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Let's Get in Touch!
           </p>
         </div>
 
         <div className="max-w-2xl mx-auto">
           {/* Form */}
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div className="contact-input">
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
                 Name
               </label>
               <input
@@ -170,13 +170,13 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 glass rounded-xl border border-border/50 bg-card/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:glow-box-sm transition-all duration-300"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 glass rounded-lg sm:rounded-xl border border-border/50 bg-card/50 text-sm sm:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:glow-box-sm transition-all duration-300"
                 placeholder="Your name"
               />
             </div>
 
             <div className="contact-input">
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
                 Email
               </label>
               <input
@@ -186,13 +186,13 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 glass rounded-xl border border-border/50 bg-card/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:glow-box-sm transition-all duration-300"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 glass rounded-lg sm:rounded-xl border border-border/50 bg-card/50 text-sm sm:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:glow-box-sm transition-all duration-300"
                 placeholder="your@email.com"
               />
             </div>
 
             <div className="contact-input">
-              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
                 Message
               </label>
               <textarea
@@ -201,18 +201,18 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={5}
-                className="w-full px-4 py-3 glass rounded-xl border border-border/50 bg-card/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:glow-box-sm transition-all duration-300 resize-none"
+                rows={4}
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 glass rounded-lg sm:rounded-xl border border-border/50 bg-card/50 text-sm sm:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:glow-box-sm transition-all duration-300 resize-none"
                 placeholder="Please enter message here...."
               />
             </div>
 
-            <div className="contact-input pt-4">
+            <div className="contact-input pt-2 md:pt-4">
               <Button
                 type="submit"
                 variant="hero"
-                size="xl"
-                className="submit-btn w-full"
+                size="lg"
+                className="submit-btn w-full text-sm sm:text-base"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -222,7 +222,7 @@ const Contact = () => {
                   </>
                 ) : (
                   <>
-                    <Send className="w-5 h-5 mr-2" />
+                    <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Send Message
                   </>
                 )}
@@ -231,28 +231,28 @@ const Contact = () => {
           </form>
 
           {/* Social Links */}
-          <div className="social-icons flex justify-center gap-4 mt-12">
+          <div className="social-icons flex justify-center gap-3 sm:gap-4 mt-8 md:mt-12">
             <a
               href="https://github.com/mfahadagri04"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon p-4 glass rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
+              className="social-icon p-3 sm:p-4 glass rounded-lg sm:rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
             >
-              <Github className="w-6 h-6 text-foreground" />
+              <Github className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
             </a>
             <a
               href="https://www.linkedin.com/in/mfahadagri/"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon p-4 glass rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
+              className="social-icon p-3 sm:p-4 glass rounded-lg sm:rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
             >
-              <Linkedin className="w-6 h-6 text-foreground" />
+              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
             </a>
             <a
               href="mailto:me@fahadagri.com"
-              className="social-icon p-4 glass rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
+              className="social-icon p-3 sm:p-4 glass rounded-lg sm:rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
             >
-              <Mail className="w-6 h-6 text-foreground" />
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
             </a>
           </div>
         </div>

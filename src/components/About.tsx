@@ -107,18 +107,18 @@ const About = () => {
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Image */}
           <div
             ref={imageRef}
-            className="relative group"
+            className="relative group flex-shrink-0"
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto">
               {/* Glow background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
               
               {/* Image container */}
-              <div className="relative glass rounded-3xl p-4 transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-2">
+              <div className="relative glass rounded-3xl p-3 md:p-4 transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-2">
                 <img
                   src={profileImage}
                   alt="Muhammad Fahad"
@@ -126,15 +126,15 @@ const About = () => {
                 />
               </div>
 
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border border-primary/30 rounded-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 border border-accent/30 rounded-2xl" />
+              {/* Decorative elements - hidden on small screens to prevent overlap */}
+              <div className="hidden md:block absolute -top-4 -right-4 w-20 h-20 lg:w-24 lg:h-24 border border-primary/30 rounded-2xl" />
+              <div className="hidden md:block absolute -bottom-4 -left-4 w-20 h-20 lg:w-24 lg:h-24 border border-accent/30 rounded-2xl" />
             </div>
           </div>
 
           {/* Content */}
-          <div ref={contentRef}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div ref={contentRef} className="space-y-4 md:space-y-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
               <span 
                 className="text-primary"
                 style={{
@@ -145,33 +145,33 @@ const About = () => {
               </span>
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
               Hi! I'm a fourth-year Business Analytics and Computer Science student at the University of Calgary with a strong interest in data and AI. I enjoy using analytics to solve real problems and turn information into meaningful insights.
             </p>
             
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
               I like building models, creating visualizations, and constantly learning new tools to grow my skills. I'm motivated by curiosity and the challenge of improving with every project.
             </p>
 
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
               Outside of school, I love playing soccer and supporting Manchester United. Being a fan has taught me patience, resilience, and how to enjoy the journey. ⚽
             </p>
 
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
               I'm currently looking for opportunities to learn, contribute, and start my career in data and AI. If you'd like to connect, feel free to reach out!
             </p>
 
             {/* Skills */}
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Skills & Technologies</h3>
-              <div className="skills-grid grid grid-cols-3 sm:grid-cols-6 gap-4">
+            <div className="pt-2 md:pt-4">
+              <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">Skills & Technologies</h3>
+              <div className="skills-grid grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
                 {skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="skill-icon glass rounded-xl p-4 text-center hover:glow-box-sm transition-all duration-300 hover:scale-110 hover:bg-card/80 cursor-default"
+                    className="skill-icon glass rounded-xl p-2 sm:p-3 md:p-4 text-center hover:glow-box-sm transition-all duration-300 hover:scale-110 hover:bg-card/80 cursor-default"
                   >
-                    <span className="text-3xl mb-2 block">{skill.icon}</span>
-                    <span className="text-xs text-muted-foreground">{skill.name}</span>
+                    <span className="text-2xl md:text-3xl mb-1 md:mb-2 block">{skill.icon}</span>
+                    <span className="text-[10px] sm:text-xs text-muted-foreground">{skill.name}</span>
                   </div>
                 ))}
               </div>

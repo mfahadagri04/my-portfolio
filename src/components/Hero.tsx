@@ -130,7 +130,15 @@ const Hero = () => {
         }}
       />
 
-      {/* Floating orbs */}
+      {/* Solid black strip at bottom to hide seam */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 z-[1]"
+        style={{
+          height: '10%',
+          background: '#05060a',
+        }}
+      />
+
       <div className="glow-orb absolute top-1/4 left-10 w-32 h-32 rounded-full bg-primary/20 blur-3xl z-[1]" />
       <div className="glow-orb absolute bottom-1/3 right-20 w-48 h-48 rounded-full bg-accent/15 blur-3xl z-[1]" style={{ animationDelay: '1s' }} />
       <div className="glow-orb absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-glow-secondary/20 blur-2xl z-[1]" style={{ animationDelay: '2s' }} />

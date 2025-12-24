@@ -50,7 +50,10 @@ const Navbar = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('#home')}
-            className="text-xl font-bold tracking-tight gradient-text hover:opacity-80 transition-opacity"
+            className="text-xl font-bold tracking-tight text-primary hover:opacity-80 transition-opacity"
+            style={{
+              textShadow: '0 0 4px rgba(124,58,237,0.5), 0 0 10px rgba(124,58,237,0.25)'
+            }}
           >
             FAHADAGRI
           </button>

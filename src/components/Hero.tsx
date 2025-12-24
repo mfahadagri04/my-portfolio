@@ -113,15 +113,9 @@ const Hero = () => {
           className="w-full h-full"
           style={{ pointerEvents: 'none' }}
         />
-        {/* Overlay gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+        {/* Cover for Spline watermark */}
+        <div className="absolute bottom-0 right-0 w-40 h-10 bg-[#0a0a0a] z-10" />
       </div>
-
-      {/* Floating orbs */}
-      <div className="glow-orb absolute top-1/4 left-10 w-32 h-32 rounded-full bg-primary/20 blur-3xl" />
-      <div className="glow-orb absolute bottom-1/3 right-20 w-48 h-48 rounded-full bg-accent/15 blur-3xl" style={{ animationDelay: '1s' }} />
-      <div className="glow-orb absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-glow-secondary/20 blur-2xl" style={{ animationDelay: '2s' }} />
 
       {/* Content */}
       <div className="container relative z-10 mx-auto px-6 pt-24 flex items-center justify-center min-h-screen">

@@ -18,12 +18,13 @@ const projects = [
     githubUrl: null,
   },
   {
-    title: 'Crime Analytics Dashboard',
+    title: 'Calgary Crime Analytics',
     description: 'An interactive data visualization dashboard displaying crime statistics with charts, maps, and real-time trend analysis.',
     image: project2Image,
-    tech: ['Python', 'React', 'D3.js', 'Data Science'],
-    liveUrl: '#',
-    githubUrl: '#',
+    tech: ['Tableau', 'Microsoft Excel', 'SQL'],
+    liveUrl: 'https://public.tableau.com/views/CrimeAnalysisFinalProjectSubmission/Dashboard2CrimebyLocation?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
+    liveLabel: 'Dashboard',
+    githubUrl: null,
   },
 ];
 
@@ -148,7 +149,7 @@ const Projects = () => {
                   <Button variant="glow" size="sm" className="flex-1" asChild>
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
+                      {project.liveLabel || 'Live Demo'}
                     </a>
                   </Button>
                   {project.githubUrl && (

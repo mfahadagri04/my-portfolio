@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Send, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,23 +86,42 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      });
 
-    // Animate button
-    gsap.fromTo(
-      '.submit-btn',
-      { scale: 0.95 },
-      { scale: 1, duration: 0.3, ease: 'back.out(2)' }
-    );
+      if (error) {
+        throw error;
+      }
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon!",
-    });
+      // Animate button
+      gsap.fromTo(
+        '.submit-btn',
+        { scale: 0.95 },
+        { scale: 1, duration: 0.3, ease: 'back.out(2)' }
+      );
 
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon!",
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error: any) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

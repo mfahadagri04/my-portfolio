@@ -108,7 +108,7 @@ const Hero = () => {
         className="absolute inset-0 z-0"
       >
         <iframe
-          src="https://my.spline.design/aigreymarketingbanner-gzki67C1KKwarH6YajxUeMzt/"
+          src="https://my.spline.design/aigreymarketingbanner-gzki67C1KKwarH6YajxUeMzt/?v=2"
           frameBorder="0"
           className="w-full h-full"
           style={{ pointerEvents: 'none' }}

@@ -146,19 +146,19 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Hi! I'm a fourth-year Business Analytics and Computer Science student at the University of Calgary. I'm really passionate about data and AI, and I enjoy learning how they can be used to solve real problems and support better decision-making.
+              Hi! I'm a fourth-year Business Analytics and Computer Science student at the University of Calgary with a strong interest in data and AI. I enjoy using analytics to solve real problems and turn information into meaningful insights.
             </p>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              I like working with data not just to analyze numbers, but to uncover insights and tell meaningful stories. Whether I'm building models, creating visualizations, or exploring new tools, I'm always curious and excited to keep learning.
+              I like building models, creating visualizations, and constantly learning new tools to grow my skills. I'm motivated by curiosity and the challenge of improving with every project.
             </p>
 
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Outside of school and projects, you'll usually find me playing soccer or watching Manchester United. I've been a fan for as long as I can remember, and following the team has taught me a lot about resilience, patience, and celebrating the small wins. ⚽
+              Outside of school, I love playing soccer and supporting Manchester United. Being a fan has taught me patience, resilience, and how to enjoy the journey. ⚽
             </p>
 
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              I'm driven, curious, and always looking for ways to grow both technically and personally. Right now, I'm looking for opportunities where I can learn from others, take on new challenges, and start building a career in data and AI. If you'd like to chat about technology, football, or anything else, feel free to reach out!
+              I'm currently looking for opportunities to learn, contribute, and start my career in data and AI. If you'd like to connect, feel free to reach out!
             </p>
 
             {/* Skills */}

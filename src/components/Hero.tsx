@@ -161,22 +161,15 @@ const Hero = () => {
             <span className="text-primary animate-pulse">|</span>
           </p>
 
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div ref={ctaRef} className="flex justify-center">
             <Button
               variant="hero"
-              size="xl"
+              size="lg"
               onClick={scrollToContact}
               className="group"
             >
               Get in Touch
               <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-            </Button>
-            <Button
-              variant="glass"
-              size="xl"
-              onClick={scrollToAbout}
-            >
-              Explore My Work
             </Button>
           </div>
         </div>

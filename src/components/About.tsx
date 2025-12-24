@@ -107,13 +107,13 @@ const About = () => {
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-10 md:gap-12 lg:gap-16 items-center">
           {/* Image */}
           <div
             ref={imageRef}
             className="relative group flex-shrink-0"
           >
-            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto">
+            <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto">
               {/* Glow background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
               
@@ -133,7 +133,7 @@ const About = () => {
           </div>
 
           {/* Content */}
-          <div ref={contentRef} className="space-y-4 md:space-y-6">
+          <div ref={contentRef} className="mt-6 lg:mt-0 space-y-4 md:space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
               <span 
                 className="text-primary"

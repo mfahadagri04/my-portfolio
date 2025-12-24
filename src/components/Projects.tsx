@@ -81,17 +81,17 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative py-32 overflow-hidden"
+      className="relative py-16 md:py-24 lg:py-32 overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      <div className="absolute top-1/3 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 left-0 w-48 md:w-96 h-48 md:h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-40 md:w-80 h-40 md:h-80 bg-primary/5 rounded-full blur-3xl" />
 
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         {/* Title */}
-        <div ref={titleRef} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div ref={titleRef} className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             <span 
               className="text-primary"
               style={{
@@ -101,20 +101,20 @@ const Projects = () => {
               Featured Projects
             </span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             A selection of projects showcasing my skills in software development and applied data science and analytics.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div ref={cardsRef} className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div ref={cardsRef} className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="project-card group relative glass rounded-2xl overflow-hidden hover:glow-box transition-all duration-500 hover:-translate-y-2"
+              className="project-card group relative glass rounded-xl md:rounded-2xl overflow-hidden hover:glow-box transition-all duration-500 hover:-translate-y-2"
             >
               {/* Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -124,20 +124,20 @@ const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="relative p-6">
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:gradient-text transition-all duration-300">
+              <div className="relative p-4 sm:p-5 md:p-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 md:mb-3 group-hover:gradient-text transition-all duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Tech stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 md:mb-6">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-medium bg-muted/50 text-muted-foreground rounded-full border border-border/50"
+                      className="px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium bg-muted/50 text-muted-foreground rounded-full border border-border/50"
                     >
                       {tech}
                     </span>
@@ -145,17 +145,17 @@ const Projects = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-3">
-                  <Button variant="glow" size="sm" className="flex-1" asChild>
+                <div className="flex gap-2 sm:gap-3">
+                  <Button variant="glow" size="sm" className="flex-1 text-xs sm:text-sm" asChild>
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                       {project.liveLabel || 'Live Demo'}
                     </a>
                   </Button>
                   {project.githubUrl && (
                     <Button variant="glass" size="sm" asChild>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4" />
+                        <Github className="w-3 h-3 sm:w-4 sm:h-4" />
                       </a>
                     </Button>
                   )}

@@ -13,9 +13,28 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Fallback timeout in case GSAP fails
-    const fallbackTimeout = setTimeout(() => {
+    const completedRef = { current: false };
+
+    const finish = () => {
+      if (completedRef.current) return;
+      completedRef.current = true;
+
+      // Ensure overlay is removed even if animations fail
+      if (preloaderRef.current) {
+        preloaderRef.current.style.opacity = '0';
+        preloaderRef.current.style.pointerEvents = 'none';
+        // Remove from layout shortly after
+        setTimeout(() => {
+          if (preloaderRef.current) preloaderRef.current.style.display = 'none';
+        }, 300);
+      }
+
       onComplete();
+    };
+
+    // Fallback timeout in case GSAP/iframe/etc. causes the timeline not to complete
+    const fallbackTimeout = window.setTimeout(() => {
+      finish();
     }, 4000);
 
     const tl = gsap.timeline();
@@ -49,16 +68,13 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
       duration: 0.8,
       ease: "power2.inOut",
       onComplete: () => {
-        clearTimeout(fallbackTimeout);
-        if (preloaderRef.current) {
-          preloaderRef.current.style.display = 'none';
-        }
-        onComplete();
+        window.clearTimeout(fallbackTimeout);
+        finish();
       }
     });
 
     return () => {
-      clearTimeout(fallbackTimeout);
+      window.clearTimeout(fallbackTimeout);
       tl.kill();
     };
   }, [onComplete]);

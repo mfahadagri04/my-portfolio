@@ -132,7 +132,7 @@ const Contact = () => {
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have a project in mind or just want to say hello? I'd love to hear from you!
+            Let's Get in Touch!
           </p>
         </div>
 
@@ -183,7 +183,7 @@ const Contact = () => {
                 required
                 rows={5}
                 className="w-full px-4 py-3 glass rounded-xl border border-border/50 bg-card/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:glow-box-sm transition-all duration-300 resize-none"
-                placeholder="Tell me about your project..."
+                placeholder="Please enter message here...."
               />
             </div>
 
@@ -213,7 +213,7 @@ const Contact = () => {
           {/* Social Links */}
           <div className="social-icons flex justify-center gap-4 mt-12">
             <a
-              href="https://github.com"
+              href="https://github.com/mfahadagri04"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon p-4 glass rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
@@ -221,7 +221,7 @@ const Contact = () => {
               <Github className="w-6 h-6 text-foreground" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/mfahadagri/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon p-4 glass rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
@@ -229,7 +229,7 @@ const Contact = () => {
               <Linkedin className="w-6 h-6 text-foreground" />
             </a>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:me@fahadagri.com"
               className="social-icon p-4 glass rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
             >
               <Mail className="w-6 h-6 text-foreground" />

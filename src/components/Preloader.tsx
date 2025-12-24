@@ -13,6 +13,11 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Fallback timeout in case GSAP fails
+    const fallbackTimeout = setTimeout(() => {
+      onComplete();
+    }, 4000);
+
     const tl = gsap.timeline();
 
     // Animate progress bar
@@ -44,6 +49,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
       duration: 0.8,
       ease: "power2.inOut",
       onComplete: () => {
+        clearTimeout(fallbackTimeout);
         if (preloaderRef.current) {
           preloaderRef.current.style.display = 'none';
         }
@@ -52,6 +58,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
     });
 
     return () => {
+      clearTimeout(fallbackTimeout);
       tl.kill();
     };
   }, [onComplete]);

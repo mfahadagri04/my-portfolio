@@ -143,7 +143,14 @@ const Hero = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
           >
             <span className="text-foreground">Hi, I'm </span>
-            <span className="gradient-text glow-text">Muhammad Fahad</span>
+            <span 
+              className="text-primary font-bold"
+              style={{
+                textShadow: '0 0 6px rgba(124,58,237,0.6), 0 0 16px rgba(124,58,237,0.35), 0 0 30px rgba(124,58,237,0.2)'
+              }}
+            >
+              Muhammad Fahad
+            </span>
           </h1>
 
           <p

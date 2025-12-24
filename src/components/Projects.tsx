@@ -10,12 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    title: 'Glassmorphic Auth UI',
-    description: 'A beautiful, modern authentication interface with glassmorphic design, featuring social login integration and smooth animations.',
+    title: 'Log in/Sign up System',
+    description: 'My first CS50P Python project using core concepts to build a simple system for storing and managing user information.',
     image: project1Image,
-    tech: ['React', 'CSS', 'Framer Motion'],
-    liveUrl: '#',
-    githubUrl: '#',
+    tech: ['Python'],
+    liveUrl: 'https://youtu.be/uEujwh09fyQ',
+    githubUrl: null,
   },
   {
     title: 'Crime Analytics Dashboard',
@@ -145,13 +145,19 @@ const Projects = () => {
 
                 {/* Actions */}
                 <div className="flex gap-3">
-                  <Button variant="glow" size="sm" className="flex-1">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                  <Button variant="glow" size="sm" className="flex-1" asChild>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </a>
                   </Button>
-                  <Button variant="glass" size="sm">
-                    <Github className="w-4 h-4" />
-                  </Button>
+                  {project.githubUrl && (
+                    <Button variant="glass" size="sm" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </div>
 

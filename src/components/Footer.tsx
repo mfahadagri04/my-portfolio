@@ -62,10 +62,17 @@ const Footer = () => {
       <div className="footer-particle absolute bottom-1/4 left-1/3 w-2 h-2 bg-glow-secondary/30 rounded-full blur-sm" style={{ animationDelay: '2s' }} />
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo & Made with */}
-          <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold gradient-text">Muhammad Fahad</h3>
+          <div className="text-center md:text-left flex-shrink-0">
+            <h3 
+              className="text-xl font-bold text-primary"
+              style={{
+                textShadow: '0 0 6px rgba(124,58,237,0.6), 0 0 16px rgba(124,58,237,0.35)'
+              }}
+            >
+              Muhammad Fahad
+            </h3>
             <p className="text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1">
               Made with <Heart className="w-3 h-3 text-primary fill-primary" /> in 2024
             </p>

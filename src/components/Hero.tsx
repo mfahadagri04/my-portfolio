@@ -100,37 +100,42 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
+      style={{ background: '#05060a' }}
     >
-      {/* Background Spline */}
+      {/* Background Spline - Full bleed */}
       <div
         ref={splineRef}
-        className="absolute inset-0 z-0 overflow-hidden"
-        style={{
-          WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%)',
-          maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%)',
-        }}
+        className="absolute inset-0 w-full h-full z-0"
+        style={{ pointerEvents: 'none' }}
       >
         <iframe
           src="https://my.spline.design/aigreymarketingbanner-gzki67C1KKwarH6YajxUeMzt/?v=2"
           frameBorder="0"
-          className="w-full h-full border-0"
+          className="absolute inset-0 w-full h-full border-0 block"
           style={{ 
             pointerEvents: 'none',
-            display: 'block',
             margin: 0,
             padding: 0,
           }}
         />
       </div>
 
+      {/* Full-coverage overlay for readability - no cutoff */}
+      <div 
+        className="absolute inset-0 z-[1]"
+        style={{
+          background: 'radial-gradient(circle at 60% 40%, rgba(0,0,0,0.15), rgba(0,0,0,0.75))'
+        }}
+      />
+
       {/* Floating orbs */}
-      <div className="glow-orb absolute top-1/4 left-10 w-32 h-32 rounded-full bg-primary/20 blur-3xl" />
-      <div className="glow-orb absolute bottom-1/3 right-20 w-48 h-48 rounded-full bg-accent/15 blur-3xl" style={{ animationDelay: '1s' }} />
-      <div className="glow-orb absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-glow-secondary/20 blur-2xl" style={{ animationDelay: '2s' }} />
+      <div className="glow-orb absolute top-1/4 left-10 w-32 h-32 rounded-full bg-primary/20 blur-3xl z-[1]" />
+      <div className="glow-orb absolute bottom-1/3 right-20 w-48 h-48 rounded-full bg-accent/15 blur-3xl z-[1]" style={{ animationDelay: '1s' }} />
+      <div className="glow-orb absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-glow-secondary/20 blur-2xl z-[1]" style={{ animationDelay: '2s' }} />
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-6 flex items-center justify-center min-h-screen">
+      <div className="container relative z-[2] mx-auto px-6 flex items-center justify-center min-h-screen">
         <div className="max-w-4xl text-center">
           <h1
             ref={headlineRef}

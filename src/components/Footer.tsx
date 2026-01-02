@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Heart } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,13 +111,6 @@ const Footer = () => {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="mailto:me@fahadagri.com"
-              className="p-2 text-muted-foreground hover:text-foreground hover:glow-text transition-all duration-300"
-              aria-label="Email"
-            >
-              <Mail className="w-5 h-5" />
             </a>
           </div>
         </div>

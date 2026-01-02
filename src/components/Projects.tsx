@@ -5,10 +5,19 @@ import { ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import project1Image from '@/assets/project-1.png';
 import project2Image from '@/assets/project-2.png';
+import project3Image from '@/assets/project-3.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
+  {
+    title: 'Al-Jazeera Residence Website',
+    description: "Built a website for my dad's Airbnb business back in Indonesia, featuring a modern design with villa listings and contact information.",
+    image: project3Image,
+    tech: ['JavaScript', 'CSS', 'HTML'],
+    liveUrl: 'https://aljazeera-residence-beta.vercel.app/',
+    githubUrl: 'https://github.com/mfahadagri04/aljazeera-residence',
+  },
   {
     title: 'Log in/Sign up System',
     description: 'My first CS50P Python project using core concepts to build a simple system for storing and managing user information.',

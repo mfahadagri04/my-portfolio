@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, Github, Linkedin, Mail } from 'lucide-react';
+import { Send, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
@@ -18,6 +18,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
 
@@ -91,6 +92,7 @@ const Contact = () => {
         body: {
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           message: formData.message,
         },
       });
@@ -111,7 +113,7 @@ const Contact = () => {
         description: "Thanks for reaching out. I'll get back to you soon!",
       });
 
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error: any) {
       console.error('Error sending message:', error);
       toast({
@@ -192,6 +194,22 @@ const Contact = () => {
             </div>
 
             <div className="contact-input">
+              <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 glass rounded-lg sm:rounded-xl border border-border/50 bg-card/50 text-sm sm:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:glow-box-sm transition-all duration-300"
+                placeholder="Your phone number"
+              />
+            </div>
+
+            <div className="contact-input">
               <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
                 Message
               </label>
@@ -247,12 +265,6 @@ const Contact = () => {
               className="social-icon p-3 sm:p-4 glass rounded-lg sm:rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
             >
               <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
-            </a>
-            <a
-              href="mailto:me@fahadagri.com"
-              className="social-icon p-3 sm:p-4 glass rounded-lg sm:rounded-xl hover:glow-box-sm hover:bg-card/80 hover:scale-110 transition-all duration-300"
-            >
-              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
             </a>
           </div>
         </div>

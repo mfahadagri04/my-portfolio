@@ -24,6 +24,7 @@ const projects = [
     image: project1Image,
     tech: ['Python'],
     liveUrl: 'https://youtu.be/uEujwh09fyQ',
+    liveLabel: 'Live Demo',
     githubUrl: null,
   },
   {

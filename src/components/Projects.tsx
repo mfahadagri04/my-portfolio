@@ -158,7 +158,7 @@ const Projects = () => {
                   <Button variant="glow" size="sm" className="flex-1 text-xs sm:text-sm" asChild>
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-                      {project.liveLabel || 'Live Demo'}
+                      {project.liveLabel || 'Website'}
                     </a>
                   </Button>
                   {project.githubUrl && (

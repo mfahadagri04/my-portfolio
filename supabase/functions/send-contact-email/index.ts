@@ -14,6 +14,16 @@ interface ContactEmailRequest {
   message: string;
 }
 
+// HTML escape function to prevent XSS in email content
+function escapeHtml(unsafe: string): string {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -23,7 +33,12 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { name, email, message }: ContactEmailRequest = await req.json();
 
-    console.log("Received contact form submission:", { name, email });
+    console.log("Received contact form submission from:", email);
+
+    // Sanitize user inputs for HTML email content
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
 
     // Send notification email to you
     const notificationRes = await fetch("https://api.resend.com/emails", {
@@ -35,13 +50,13 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
         to: ["me@fahadagri.com"],
-        subject: `New Contact Form Message from ${name}`,
+        subject: `New Contact Form Message from ${safeName}`,
         html: `
           <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Name:</strong> ${safeName}</p>
+          <p><strong>Email:</strong> ${safeEmail}</p>
           <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p>${safeMessage}</p>
         `,
       }),
     });
@@ -49,7 +64,7 @@ const handler = async (req: Request): Promise<Response> => {
     if (!notificationRes.ok) {
       const errorData = await notificationRes.text();
       console.error("Failed to send notification email:", errorData);
-      throw new Error(`Failed to send notification email: ${errorData}`);
+      throw new Error("EMAIL_SEND_FAILED");
     }
 
     console.log("Notification email sent successfully");
@@ -66,7 +81,7 @@ const handler = async (req: Request): Promise<Response> => {
         to: [email],
         subject: "Thanks for reaching out!",
         html: `
-          <h2>Thank you for contacting me, ${name}!</h2>
+          <h2>Thank you for contacting me, ${safeName}!</h2>
           <p>I have received your message and will get back to you as soon as possible.</p>
           <p>Best regards,<br>Fahad Agri</p>
         `,
@@ -88,9 +103,12 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
+    // Log full error server-side for debugging
     console.error("Error in send-contact-email function:", error);
+    
+    // Return generic error message to client (no internal details)
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Failed to send message. Please try again later." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
